@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 1999463623}
   - component: {fileID: 1999463624}
   m_Layer: 0
-  m_Name: Fall (32x32)
+  m_Name: Ninja Pepe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -660,7 +660,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1999463624
 BoxCollider2D:
   m_ObjectHideFlags: 0
