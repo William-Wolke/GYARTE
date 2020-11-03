@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trädgå : MonoBehaviour
 {
-    public float speed = 5;
+    public float speed = 7;
 
     // Start is called before the first frame update
     void Start()
@@ -17,14 +17,19 @@ public class Trädgå : MonoBehaviour
     {
         float controllX = Input.GetAxisRaw("Horizontal");
 
-        Vector3 movementX = Vector3.left * Time.deltaTime * speed * controllX;
+        Vector3 movementX = Vector2.left * Time.deltaTime * speed * controllX;
         transform.Translate(-movementX);
 
         float controllY = Input.GetAxisRaw("Vertical");
 
-        Vector3 movementY = Vector3.up * Time.deltaTime * speed * controllY;
-        transform.Translate(movementY);
+        Vector3 movementY = Vector2.up * Time.deltaTime * speed * controllY;
         
+        
+        if (controllY <= 0){
+           movementY = Vector2.up * Time.deltaTime * speed * controllY * 0;
+        }
+
+        transform.Translate(movementY);
         
     }
 }
