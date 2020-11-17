@@ -11,12 +11,10 @@ public class Respawn : MonoBehaviour
     {
         // Vector2 baguette = 
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("trigger is running");
         if (other.CompareTag("Player"))
         {
-            Debug.Log("player hit trigger");
             other.transform.position = teleport.position;
         }
     }
