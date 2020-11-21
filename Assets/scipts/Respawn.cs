@@ -10,12 +10,14 @@ public class Respawn : MonoBehaviour
     void Start()
     {
         // Vector2 baguette = 
+        
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             other.transform.position = teleport.position;
+            timesLost += 1;
         }
     }
 }
