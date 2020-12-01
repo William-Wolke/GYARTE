@@ -19,7 +19,7 @@ public class GameScript : MonoBehaviour
         if(1==1) //det ska stå om man vunnit här.
         {
             Data spelData = new Data();
-            totalTime = Time.time;
+            //totalTime = Time.time;
             
 
         }
