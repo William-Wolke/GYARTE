@@ -3,15 +3,17 @@ using System.Net.Mime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class GameScript : MonoBehaviour
 {
+    private float totalTime;
     // Start is called before the first frame update
     void Start()
     {
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 60;
-        private string totalTime;
+        Application.targetFrameRate = 30;
+        
     }
 
     // Update is called once per frame
@@ -20,7 +22,7 @@ public class GameScript : MonoBehaviour
         if(1==1) //det ska stå om man vunnit här.
         {
             Data spelData = new Data();
-            //totalTime = Time.time;
+            totalTime = Time.time;
             
 
         }

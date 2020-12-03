@@ -6,10 +6,12 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     [SerializeField] private Transform teleport;
+    public int timesLost = 0;
 
     void Start()
     {
         // Vector2 baguette = 
+        
         
     }
     private void OnTriggerEnter2D(Collider2D other)
