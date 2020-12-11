@@ -6,20 +6,20 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     [SerializeField] private Transform teleport;
-    public int timesLost = 0;
+    public int respawnTimes = 0;
 
     void Start()
     {
-        // Vector2 baguette = 
         
         
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             other.transform.position = teleport.position;
-            timesLost += 1;
+            respawnTimes += 1;
         }
     }
 }
