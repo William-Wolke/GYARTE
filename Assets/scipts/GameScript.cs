@@ -11,13 +11,14 @@ using System.Xml.Serialization;
 
 public class GameScript : MonoBehaviour
 {
+    XmlSerializer dataSerializer = new XmlSerializer(typeof(Data));
     //private float totalTime;
     // Start is called before the first frame update
     void Start()
     {
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 15;
-        XmlSerializer dataSerializer = new XmlSerializer(typeof(Data));
+        Application.targetFrameRate = 200;
+        
         Debug.Log("Despacito");
     }
 
@@ -28,11 +29,11 @@ public class GameScript : MonoBehaviour
         {
             Data spelData = new Data();
             spelData.totalTime = Time.time;
-            spelData.timesLost = respawnTimes;
+            spelData.timesLost = /*respawnTimes*/0;
             
-            using (FileStream file = File.Open(@"ship.xml", FileMode.OpenOrCreate))
+            using (FileStream file = File.Open(@"gameData.xml", FileMode.OpenOrCreate))
             {
-                shipSerializer.Serialize(file, myShip);
+                dataSerializer.Serialize(file, 1);
             }
         }
     }
