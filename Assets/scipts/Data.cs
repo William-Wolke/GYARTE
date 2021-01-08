@@ -6,5 +6,4 @@ public class Data : MonoBehaviour
 {
     public float totalTime;
     public int timesLost;
-    
 }

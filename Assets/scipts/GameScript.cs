@@ -12,6 +12,8 @@ using System.Xml.Serialization;
 public class GameScript : MonoBehaviour
 {
     XmlSerializer dataSerializer = new XmlSerializer(typeof(Data));
+    public Data newGameData = new Data();
+    public int respawnTimes = 0;
     //private float totalTime;
     // Start is called before the first frame update
     void Start()
@@ -27,13 +29,12 @@ public class GameScript : MonoBehaviour
     {
         if(1==1) //det ska stå om man vunnit här.
         {
-            Data spelData = new Data();
-            spelData.totalTime = Time.time;
-            spelData.timesLost = /*respawnTimes*/0;
+            newGameData.totalTime = Time.time;
+            newGameData.timesLost = respawnTimes;
             
             using (FileStream file = File.Open(@"gameData.xml", FileMode.OpenOrCreate))
             {
-                dataSerializer.Serialize(file, 1);
+                dataSerializer.Serialize(file, newGameData);
             }
         }
     }
