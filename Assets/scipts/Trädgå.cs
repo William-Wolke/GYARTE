@@ -5,6 +5,7 @@ using UnityEngine;
 public class Trädgå : MonoBehaviour
 {
     public float speed = 7;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class Trädgå : MonoBehaviour
         Vector3 movementX = Vector2.left * Time.deltaTime * speed * controllX;
         transform.Translate(-movementX);
 
+        animator.SetFloat("Speed", Mathf.Abs(controllX));
+
         float controllY = Input.GetAxisRaw("Vertical");
 
         Vector3 movementY = Vector2.up * Time.deltaTime * speed * controllY;
@@ -27,6 +30,7 @@ public class Trädgå : MonoBehaviour
         
         if (controllY <= 0){
            movementY = Vector2.up * Time.deltaTime * speed * controllY * 0;
+           //animator.SetBool("IsJumping", true);
         }
 
         transform.Translate(movementY);
