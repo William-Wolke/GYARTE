@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Diagnostics;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,10 +32,12 @@ public class Trädgå : MonoBehaviour
         if (controllY < 0){
            movementY = Vector2.up * Time.deltaTime * speed * controllY * 0;
            animator.SetBool("IsJumping", true);
+           UnityEngine.Debug.Log("Hej");
         }
         else if (controllY >= 0)
         {
             animator.SetBool("IsJumping", false);
+            UnityEngine.Debug.Log("Nej");
         }
 
         transform.Translate(movementY);
