@@ -29,18 +29,16 @@ public class Trädgå : MonoBehaviour
         Vector3 movementY = Vector2.up * Time.deltaTime * speed * controllY;
         
         
-        if (controllY < 0){
+        if (controllY <= 0){
            movementY = Vector2.up * Time.deltaTime * speed * controllY * 0;
-           animator.SetBool("IsJumping", true);
-           UnityEngine.Debug.Log("Hej");
+           animator.SetBool("IsJumping", false);
+           //Funkar korrekt
         }
-        else if (controllY >= 0)
+        else if (controllY > 0)
         {
-            animator.SetBool("IsJumping", false);
-            UnityEngine.Debug.Log("Nej");
+            animator.SetBool("IsJumping", true);
+            //Funkar korrekt
         }
-
         transform.Translate(movementY);
-        
     }
 }
