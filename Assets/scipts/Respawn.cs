@@ -13,7 +13,7 @@ using System.Xml.Serialization;*/
 public class Respawn : MonoBehaviour
 {
     [SerializeField] private Transform teleport;
-    public int timesLost {get; set;}
+    public static int timesLost;
 
 
     void Start()
@@ -21,13 +21,12 @@ public class Respawn : MonoBehaviour
         
     }
 
-    public int OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             other.transform.position = teleport.position;
-            return timesLost++;
+            timesLost++;
         }
-        return 0;
     }
 }

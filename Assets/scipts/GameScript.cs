@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Diagnostics;
+using System.Net;
 using System.Globalization;
 using System.ComponentModel;
 using System.Timers;
@@ -20,15 +21,23 @@ public class GameScript : MonoBehaviour
     void Start()
     {
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 200;
+        Application.targetFrameRate = 15;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(1==1) //det ska stå om man vunnit här.
+        if(GoalScript.finished == true) //det ska stå om man vunnit här.
         {
+            Time.timeScale = 0;
 
+            List<string> info = new List<string>() // En list skapas där all data överförs
+            {
+                "Times respawn: " + Respawn.timesLost.ToString(),
+                "Total playing time: " + Time.time.ToString()
+            };
+
+            File.WriteAllLines(@"data.txt", info.ToArray());// File.WriteAllLines skriver ut all data i en array
         }
         
     }
