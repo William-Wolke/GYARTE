@@ -17,7 +17,7 @@ public class Respawn : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.transform.position = teleport.position;
-            //timesLost += 1;
+            timesLost += 1;
         }
     }
 }
