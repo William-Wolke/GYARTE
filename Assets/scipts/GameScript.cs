@@ -21,7 +21,7 @@ public class GameScript : MonoBehaviour
     void Start()
     {
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 15;
+        Application.targetFrameRate = 30;
     }
 
     // Update is called once per frame
