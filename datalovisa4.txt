@@ -1,0 +1,2 @@
+Times respawn: 0
+Total playing time: 32,35151
